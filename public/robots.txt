@@ -1,0 +1,6 @@
+# robots.txt for ProLanding Digital Agency
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://prolanding.agency/sitemap.xml

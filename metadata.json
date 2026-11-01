@@ -1,0 +1,6 @@
+{
+  "name": "ProLanding",
+  "description": "ProLanding engineers high-converting digital products, bespoke web platforms, and intuitive SaaS user interfaces for ambitious scaling companies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
