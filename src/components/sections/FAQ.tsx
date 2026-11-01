@@ -11,19 +11,19 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 border-t border-white/10 bg-[#101A2D]/30 scroll-mt-16" aria-labelledby="faq-heading">
+    <section id="faq" className="py-28 border-t border-white/[0.08] bg-[#080D1A] scroll-mt-16" aria-labelledby="faq-heading">
       <Container size="md">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#080D1A] border border-white/10 text-xs font-semibold text-[#60A5FA] mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#101A2D] border border-white/10 text-xs font-semibold text-[#60A5FA] mb-4">
             <HelpCircle className="w-3.5 h-3.5 text-[#3B82F6]" />
-            <span>Common Questions</span>
+            <span>Common Inquiries</span>
           </div>
-          <h2 id="faq-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 text-balance">
+          <h2 id="faq-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 text-balance">
             Frequently Asked Questions
           </h2>
-          <p className="text-base text-[#A3AEC2] leading-relaxed text-balance">
-            Find immediate answers regarding timelines, revisions, responsive engineering, and getting started.
+          <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed text-balance">
+            Direct answers regarding project timelines, revision workflows, responsive mobile testing, and post-launch maintenance.
           </p>
         </div>
 
@@ -37,10 +37,10 @@ export const FAQ: React.FC = () => {
             return (
               <div
                 key={faq.id}
-                className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                className={`rounded-2xl transition-all duration-200 overflow-hidden ${
                   isOpen
-                    ? 'bg-[#101A2D] border-[#3B82F6]/60 shadow-lg shadow-black/20 ring-1 ring-[#3B82F6]/20'
-                    : 'bg-[#101A2D]/40 border-white/10 hover:border-white/20'
+                    ? 'bg-[#101A2D] border border-[#3B82F6]/60 shadow-xl shadow-black/30 ring-1 ring-[#3B82F6]/20'
+                    : 'bg-[#101A2D]/50 border border-white/[0.08] hover:border-white/20'
                 }`}
               >
                 <h3 className="m-0 p-0 text-base font-semibold text-white">
@@ -48,16 +48,16 @@ export const FAQ: React.FC = () => {
                     id={buttonId}
                     type="button"
                     onClick={() => toggle(faq.id)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]"
+                    className="w-full px-6 sm:px-8 py-5 sm:py-6 flex items-center justify-between text-left cursor-pointer gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3B82F6]"
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                   >
-                    <span className="text-base font-semibold text-white tracking-tight">
+                    <span className="text-base sm:text-lg font-bold text-white tracking-tight">
                       {faq.question}
                     </span>
                     <div
-                      className={`w-7 h-7 rounded-lg bg-[#080D1A] border border-white/10 flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                        isOpen ? 'rotate-180 text-[#60A5FA] border-[#3B82F6]/40' : 'text-[#A3AEC2]'
+                      className={`w-8 h-8 rounded-xl bg-[#080D1A] border border-white/10 flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                        isOpen ? 'rotate-180 text-[#60A5FA] border-[#3B82F6]/50' : 'text-[#94A3B8]'
                       }`}
                     >
                       <ChevronDown className="w-4 h-4" />
@@ -70,7 +70,7 @@ export const FAQ: React.FC = () => {
                   role="region"
                   aria-labelledby={buttonId}
                   hidden={!isOpen}
-                  className={`px-6 pb-6 pt-1 text-sm text-[#A3AEC2] leading-relaxed border-t border-white/5 transition-opacity duration-200 ${
+                  className={`px-6 sm:px-8 pb-6 sm:pb-8 pt-1 text-sm sm:text-base text-[#94A3B8] leading-relaxed border-t border-white/[0.06] transition-opacity duration-200 ${
                     isOpen ? 'block opacity-100' : 'hidden opacity-0'
                   }`}
                 >

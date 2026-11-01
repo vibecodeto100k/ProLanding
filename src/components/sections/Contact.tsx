@@ -165,84 +165,88 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
   return (
     <section
       id="contact"
-      className="py-24 border-t border-white/10 bg-[#080D1A] scroll-mt-16 relative"
+      className="py-28 border-t border-white/[0.08] bg-[#0A1020] scroll-mt-16 relative overflow-hidden"
       aria-labelledby="contact-heading"
     >
       {/* Background ambient glow */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#3B82F6]/10 rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/[0.08] rounded-full blur-[170px] pointer-events-none"
       />
 
       <Container>
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#101A2D] border border-white/10 text-xs font-semibold text-[#60A5FA] mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-20 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#101A2D] border border-white/10 text-xs font-semibold text-[#60A5FA] mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#3B82F6]" />
-            <span>Initiate Project</span>
+            <span>Initiate Collaboration</span>
           </div>
           <h2
             id="contact-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 text-balance"
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4 text-balance"
           >
             Let's Start a Conversation
           </h2>
-          <p className="text-base text-[#A3AEC2] leading-relaxed text-balance">
-            Submit your inquiry below. Submissions are securely validated by our server endpoint and stored in Supabase.
+          <p className="text-base sm:text-lg text-[#94A3B8] leading-relaxed text-balance">
+            Submit your project requirements below. Inquiries are securely validated by our server endpoint and recorded directly into Supabase.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start relative z-10">
           {/* Left Column: Direct Agency Channels */}
           <div className="lg:col-span-5 space-y-6 text-left">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-3">
-                Direct Contact Information
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-3">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34D399]" />
+                <span>Accepting New Projects for Q2/Q3</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
+                Direct Contact Channels
               </h3>
-              <p className="text-sm text-[#A3AEC2] leading-relaxed">
-                Connect directly with our engineering and design leads. We prioritize transparent communication and responsive feedback.
+              <p className="text-sm text-[#94A3B8] leading-relaxed">
+                Connect directly with our engineering and design leads. We prioritize clear technical scoping and transparent communication.
               </p>
             </div>
 
             <div className="space-y-4">
-              <div className="p-4 rounded-2xl bg-[#101A2D]/60 border border-white/10 flex items-start gap-4">
-                <div className="p-2.5 rounded-xl bg-[#3B82F6]/10 border border-[#3B82F6]/25 text-[#3B82F6] shrink-0">
+              <div className="p-5 rounded-2xl luxury-card flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/25 text-[#3B82F6] flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-[#A3AEC2]">Direct Inquiries</div>
-                  <div className="text-sm font-semibold text-white">vibecodeto.100k@gmail.com</div>
+                  <div className="text-xs text-[#94A3B8] font-medium">Direct Inquiries</div>
+                  <div className="text-sm font-semibold text-white mt-0.5">vibecodeto.100k@gmail.com</div>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#101A2D]/60 border border-white/10 flex items-start gap-4">
-                <div className="p-2.5 rounded-xl bg-[#3B82F6]/10 border border-[#3B82F6]/25 text-[#3B82F6] shrink-0">
+              <div className="p-5 rounded-2xl luxury-card flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/25 text-[#3B82F6] flex items-center justify-center shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-[#A3AEC2]">Response Timeline</div>
-                  <div className="text-sm font-semibold text-white">&lt; 24 business hours guaranteed</div>
+                  <div className="text-xs text-[#94A3B8] font-medium">Response SLA</div>
+                  <div className="text-sm font-semibold text-white mt-0.5">&lt; 24 business hours guaranteed</div>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#101A2D]/60 border border-white/10 flex items-start gap-4">
-                <div className="p-2.5 rounded-xl bg-[#3B82F6]/10 border border-[#3B82F6]/25 text-[#3B82F6] shrink-0">
+              <div className="p-5 rounded-2xl luxury-card flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/25 text-[#3B82F6] flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-[#A3AEC2]">Studio Location</div>
-                  <div className="text-sm font-semibold text-white">San Francisco, CA · Remote Worldwide</div>
+                  <div className="text-xs text-[#94A3B8] font-medium">Studio Location</div>
+                  <div className="text-sm font-semibold text-white mt-0.5">San Francisco, CA · Remote Worldwide</div>
                 </div>
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#101A2D]/30 border border-white/10 text-xs text-[#A3AEC2] leading-relaxed flex items-start gap-3">
-              <Database className="w-4 h-4 text-[#3B82F6] shrink-0 mt-0.5" />
+            <div className="p-5 rounded-2xl bg-[#080D1A] border border-white/10 text-xs text-[#94A3B8] leading-relaxed flex items-start gap-3.5 shadow-inner">
+              <Database className="w-5 h-5 text-[#3B82F6] shrink-0 mt-0.5" />
               <div>
-                <strong className="text-white block mb-0.5">Supabase Backend Connected</strong>
+                <strong className="text-white block mb-0.5 font-semibold">Supabase Backend Connected</strong>
                 <span>
-                  Posts directly to <code className="text-[#60A5FA]">/api/contact</code> and records into the{' '}
-                  <code className="text-[#60A5FA]">contact_submissions</code> table with Row Level Security.
+                  Posts directly to <code className="text-[#60A5FA] font-mono">/api/contact</code> and records into the{' '}
+                  <code className="text-[#60A5FA] font-mono">contact_submissions</code> table with Row Level Security.
                 </span>
               </div>
             </div>
@@ -250,25 +254,25 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
 
           {/* Right Column: Controlled Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-2xl bg-[#101A2D] border border-white/10 shadow-2xl relative">
-              {/* Submission State: SUCCESS (Rendered only after confirmed database success) */}
+            <div className="p-8 sm:p-11 rounded-2xl luxury-card shadow-2xl relative">
+              {/* Submission State: SUCCESS */}
               {submissionState === 'success' ? (
                 <div
                   role="status"
                   aria-live="polite"
-                  className="text-center py-10 space-y-4 animate-in fade-in zoom-in-95 duration-300"
+                  className="text-center py-10 space-y-5 animate-in fade-in zoom-in-95 duration-300"
                 >
-                  <div className="w-14 h-14 mx-auto rounded-full bg-[#10B981]/20 border border-[#10B981]/40 flex items-center justify-center text-[#10B981]">
-                    <CheckCircle2 className="w-8 h-8" />
+                  <div className="w-16 h-16 mx-auto rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                    <CheckCircle2 className="w-9 h-9" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Inquiry Saved to Supabase!</h3>
-                  <p className="text-sm text-[#A3AEC2] max-w-md mx-auto leading-relaxed">
+                  <h3 className="text-2xl font-bold text-white tracking-tight">Inquiry Saved to Supabase!</h3>
+                  <p className="text-sm text-[#94A3B8] max-w-md mx-auto leading-relaxed">
                     Your submission was securely verified and recorded into the{' '}
-                    <code className="text-white font-mono">contact_submissions</code> table. Our team has received your inquiry.
+                    <code className="text-white font-mono bg-[#080D1A] px-1.5 py-0.5 rounded border border-white/10">contact_submissions</code> table. Our senior engineer will respond shortly.
                   </p>
                   {confirmedId && (
-                    <div className="text-[11px] font-mono text-[#60A5FA] bg-[#080D1A] py-1.5 px-3 rounded-lg border border-white/10 inline-block">
-                      Record ID: {confirmedId}
+                    <div className="text-xs font-mono text-[#60A5FA] bg-[#080D1A] py-2 px-4 rounded-xl border border-white/10 inline-block shadow-inner">
+                      Record UUID: {confirmedId}
                     </div>
                   )}
                   <div className="pt-4">
@@ -287,8 +291,8 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
                 </div>
               ) : (
                 /* FORM INTERFACE */
-                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                  {/* Top Error Banner (Rendered when validation or database insertion fails) */}
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                  {/* Top Error Banner */}
                   {submissionState === 'error' && errorMessage && (
                     <div
                       role="alert"
@@ -296,9 +300,9 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
                     >
                       <div className="flex items-center gap-2 font-semibold text-red-200">
                         <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
-                        <span>Submission Failed</span>
+                        <span>Submission Notice</span>
                       </div>
-                      <p className="pl-6 text-[#A3AEC2]">{errorMessage}</p>
+                      <p className="pl-6 text-[#94A3B8]">{errorMessage}</p>
                     </div>
                   )}
 
@@ -317,7 +321,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {/* Full Name */}
                     <div>
-                      <label htmlFor="fullName" className="block text-xs font-medium text-white mb-1.5">
+                      <label htmlFor="fullName" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
                         Full Name <span className="text-[#3B82F6]">*</span>
                       </label>
                       <input
@@ -333,14 +337,14 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
                         onChange={(e) => handleChange('fullName', e.target.value)}
                         onBlur={() => handleBlur('fullName')}
                         disabled={isSubmitting}
-                        className={`w-full px-4 py-3 rounded-xl bg-[#080D1A] border text-sm text-white placeholder-[#A3AEC2]/40 focus:outline-none focus:border-[#3B82F6] transition-colors disabled:opacity-60 ${
+                        className={`w-full px-4 py-3.5 rounded-xl bg-[#080D1A] border text-sm text-white placeholder-[#94A3B8]/40 focus:outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/30 transition-all duration-200 disabled:opacity-60 shadow-inner ${
                           touched.fullName && errors.fullName
                             ? 'border-red-500/80 ring-1 ring-red-500/30'
-                            : 'border-white/10'
+                            : 'border-white/10 hover:border-white/20'
                         }`}
                       />
                       {touched.fullName && errors.fullName && (
-                        <p id="fullName-error" className="text-[11px] text-red-400 mt-1 flex items-center gap-1">
+                        <p id="fullName-error" className="text-[11px] text-red-400 mt-1.5 flex items-center gap-1 font-medium">
                           <AlertCircle className="w-3 h-3" /> {errors.fullName}
                         </p>
                       )}
@@ -348,7 +352,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
 
                     {/* Email */}
                     <div>
-                      <label htmlFor="email" className="block text-xs font-medium text-white mb-1.5">
+                      <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
                         Email Address <span className="text-[#3B82F6]">*</span>
                       </label>
                       <input
@@ -364,14 +368,14 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
                         onChange={(e) => handleChange('email', e.target.value)}
                         onBlur={() => handleBlur('email')}
                         disabled={isSubmitting}
-                        className={`w-full px-4 py-3 rounded-xl bg-[#080D1A] border text-sm text-white placeholder-[#A3AEC2]/40 focus:outline-none focus:border-[#3B82F6] transition-colors disabled:opacity-60 ${
+                        className={`w-full px-4 py-3.5 rounded-xl bg-[#080D1A] border text-sm text-white placeholder-[#94A3B8]/40 focus:outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/30 transition-all duration-200 disabled:opacity-60 shadow-inner ${
                           touched.email && errors.email
                             ? 'border-red-500/80 ring-1 ring-red-500/30'
-                            : 'border-white/10'
+                            : 'border-white/10 hover:border-white/20'
                         }`}
                       />
                       {touched.email && errors.email && (
-                        <p id="email-error" className="text-[11px] text-red-400 mt-1 flex items-center gap-1">
+                        <p id="email-error" className="text-[11px] text-red-400 mt-1.5 flex items-center gap-1 font-medium">
                           <AlertCircle className="w-3 h-3" /> {errors.email}
                         </p>
                       )}
@@ -380,8 +384,8 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
 
                   {/* Subject */}
                   <div>
-                    <label htmlFor="subject" className="block text-xs font-medium text-white mb-1.5">
-                      Subject <span className="text-[#3B82F6]">*</span>
+                    <label htmlFor="subject" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                      Subject Line <span className="text-[#3B82F6]">*</span>
                     </label>
                     <input
                       id="subject"
@@ -396,14 +400,14 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
                       onChange={(e) => handleChange('subject', e.target.value)}
                       onBlur={() => handleBlur('subject')}
                       disabled={isSubmitting}
-                      className={`w-full px-4 py-3 rounded-xl bg-[#080D1A] border text-sm text-white placeholder-[#A3AEC2]/40 focus:outline-none focus:border-[#3B82F6] transition-colors disabled:opacity-60 ${
+                      className={`w-full px-4 py-3.5 rounded-xl bg-[#080D1A] border text-sm text-white placeholder-[#94A3B8]/40 focus:outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/30 transition-all duration-200 disabled:opacity-60 shadow-inner ${
                         touched.subject && errors.subject
                           ? 'border-red-500/80 ring-1 ring-red-500/30'
-                          : 'border-white/10'
+                          : 'border-white/10 hover:border-white/20'
                       }`}
                     />
                     {touched.subject && errors.subject && (
-                      <p id="subject-error" className="text-[11px] text-red-400 mt-1 flex items-center gap-1">
+                      <p id="subject-error" className="text-[11px] text-red-400 mt-1.5 flex items-center gap-1 font-medium">
                         <AlertCircle className="w-3 h-3" /> {errors.subject}
                       </p>
                     )}
@@ -411,8 +415,8 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-xs font-medium text-white mb-1.5">
-                      Message <span className="text-[#3B82F6]">*</span>
+                    <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
+                      Project Details &amp; Timeline <span className="text-[#3B82F6]">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -422,19 +426,19 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
                       aria-required="true"
                       aria-invalid={Boolean(touched.message && errors.message)}
                       aria-describedby={errors.message ? 'message-error' : undefined}
-                      placeholder="Tell us about your project goals, timeline, and requirements..."
+                      placeholder="Tell us about your project vision, target audience, budget bracket, and timeline..."
                       value={formData.message}
                       onChange={(e) => handleChange('message', e.target.value)}
                       onBlur={() => handleBlur('message')}
                       disabled={isSubmitting}
-                      className={`w-full px-4 py-3 rounded-xl bg-[#080D1A] border text-sm text-white placeholder-[#A3AEC2]/40 focus:outline-none focus:border-[#3B82F6] transition-colors resize-none disabled:opacity-60 ${
+                      className={`w-full px-4 py-3.5 rounded-xl bg-[#080D1A] border text-sm text-white placeholder-[#94A3B8]/40 focus:outline-none focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/30 transition-all duration-200 resize-none disabled:opacity-60 shadow-inner ${
                         touched.message && errors.message
                           ? 'border-red-500/80 ring-1 ring-red-500/30'
-                          : 'border-white/10'
+                          : 'border-white/10 hover:border-white/20'
                       }`}
                     />
                     {touched.message && errors.message && (
-                      <p id="message-error" className="text-[11px] text-red-400 mt-1 flex items-center gap-1">
+                      <p id="message-error" className="text-[11px] text-red-400 mt-1.5 flex items-center gap-1 font-medium">
                         <AlertCircle className="w-3 h-3" /> {errors.message}
                       </p>
                     )}
@@ -447,7 +451,7 @@ export const Contact: React.FC<ContactProps> = ({ initialSubject, onSubmitted })
                     size="lg"
                     isLoading={isSubmitting}
                     disabled={isSubmitting}
-                    className="w-full justify-center shadow-electric-blue"
+                    className="w-full justify-center"
                     rightIcon={<Send className="w-4 h-4" />}
                   >
                     {isSubmitting ? 'Recording to Supabase...' : 'Send Message'}

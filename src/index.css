@@ -3,11 +3,17 @@
 @layer base {
   :root {
     --bg-primary: #080D1A;
-    --bg-secondary: #101A2D;
+    --bg-secondary: #0F172A;
+    --bg-card: #0D1629;
+    --bg-card-hover: #121F3A;
     --accent-primary: #3B82F6;
     --accent-secondary: #60A5FA;
+    --accent-cyan: #38BDF8;
     --text-primary: #FFFFFF;
-    --text-secondary: #A3AEC2;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-highlight: rgba(59, 130, 246, 0.35);
   }
 
   html {
@@ -16,6 +22,9 @@
     background-color: #080D1A;
     color: #FFFFFF;
     color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -30,7 +39,7 @@
     color: #FFFFFF;
   }
 
-  /* Custom keyboard focus accessibility ring */
+  /* Accessible focus rings */
   :focus-visible {
     outline: 2px solid #3B82F6;
     outline-offset: 2px;
@@ -50,46 +59,79 @@
   }
 }
 
-/* Design System Utilities */
-.bg-navy-primary {
-  background-color: #080D1A;
+/* Background Atmosphere Mesh & Gradients */
+.bg-radial-mesh {
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.18), transparent 75%),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(99, 102, 241, 0.10), transparent 70%);
 }
 
-.bg-navy-secondary {
-  background-color: #101A2D;
+.bg-radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
 }
 
-.bg-navy-card {
-  background-color: #0D1527;
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-.text-navy-muted {
-  color: #A3AEC2;
+/* Luxury Hardware Card Surfaces */
+.luxury-card {
+  background-color: rgba(13, 22, 41, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 20px -2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
 }
 
-/* Electric Blue Glow & Subtle Shadows */
+.luxury-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 
+    0 8px 30px -4px rgba(0, 0, 0, 0.6),
+    0 0 20px -2px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Precision Glow Effects */
 .shadow-electric-blue {
-  box-shadow: 0 0 25px -4px rgba(59, 130, 246, 0.4);
+  box-shadow: 
+    0 0 25px -4px rgba(59, 130, 246, 0.45),
+    0 8px 20px -6px rgba(37, 99, 235, 0.5);
 }
 
 .shadow-electric-blue-sm {
-  box-shadow: 0 0 15px -3px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 15px -3px rgba(59, 130, 246, 0.35);
 }
 
-/* Soft gradients */
-.gradient-blue-accent {
-  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-}
-
+/* Gradient text accents */
 .gradient-text-hero {
-  background: linear-gradient(135deg, #FFFFFF 40%, #93C5FD 100%);
+  background: linear-gradient(135deg, #FFFFFF 30%, #93C5FD 75%, #3B82F6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-text-accent {
+  background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 50%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Premium Top Navigation Glass */
 .glass-nav {
-  background-color: rgba(8, 13, 26, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(8, 13, 26, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Subtle Shimmer for High-Priority CTAs */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite ease-in-out;
 }

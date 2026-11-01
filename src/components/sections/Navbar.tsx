@@ -16,9 +16,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Simple active section detection based on scroll position
-      const sections = ['home', 'services', 'portfolio', 'about', 'contact'];
-      const scrollPosition = window.scrollY + 120;
+      const sections = ['home', 'services', 'about', 'portfolio', 'process', 'pricing', 'faq', 'contact'];
+      const scrollPosition = window.scrollY + 140;
 
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
@@ -109,24 +108,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
         role="banner"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#080D1A]/90 backdrop-blur-md border-b border-white/10 py-3.5 shadow-xl shadow-black/30'
+            ? 'glass-nav py-3.5 shadow-2xl shadow-black/40'
             : 'bg-transparent py-5 sm:py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-8">
-            {/* ZONE 1 (LEFT): Brand Logo & Name */}
+          <div className="flex items-center justify-between gap-6 sm:gap-8">
+            {/* ZONE 1 (LEFT): Brand Logo & Single Clean Wordmark */}
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home', 'home')}
-              className="flex items-center gap-2.5 text-white font-bold text-xl tracking-tight group shrink-0 focus-visible:rounded-lg"
+              className="flex items-center gap-3 text-white font-bold text-xl tracking-tight group shrink-0 focus-visible:rounded-lg"
               aria-label="ProLanding Homepage"
             >
               {/* Premium geometric emblem */}
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2563EB] to-[#60A5FA] p-[1px] shadow-md shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
-                <div className="w-full h-full bg-[#080D1A] rounded-[11px] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#2563EB] via-[#3B82F6] to-[#60A5FA] p-[1.5px] shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-all duration-300">
+                <div className="w-full h-full bg-[#080D1A] rounded-[10px] flex items-center justify-center">
                   <svg
-                    className="w-5 h-5 text-[#3B82F6] group-hover:scale-105 transition-transform"
+                    className="w-5 h-5 text-[#3B82F6] group-hover:scale-110 transition-transform duration-300"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -141,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
                 </div>
               </div>
 
-              <span className="text-white text-lg sm:text-xl font-bold tracking-tight">
+              <span className="text-white text-lg sm:text-xl font-extrabold tracking-tight">
                 Pro<span className="text-[#3B82F6]">Landing</span>
               </span>
             </a>
@@ -150,7 +149,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
             <nav
               role="navigation"
               aria-label="Main navigation"
-              className="hidden md:flex items-center gap-1 lg:gap-2 px-3 py-1.5 rounded-full bg-[#101A2D]/40 border border-white/5 backdrop-blur-sm"
+              className="hidden md:flex items-center gap-1 lg:gap-1.5 px-3 py-1.5 rounded-full bg-[#101A2D]/60 border border-white/10 backdrop-blur-md shadow-inner"
             >
               {navLinks.map((link) => {
                 const isActive = activeSection === link.id;
@@ -161,15 +160,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
                     onClick={(e) => handleNavClick(e, link.href, link.id)}
                     className={`px-4 py-2 text-xs lg:text-sm font-medium rounded-full transition-all duration-200 whitespace-nowrap shrink-0 relative ${
                       isActive
-                        ? 'text-white bg-white/10 shadow-sm'
-                        : 'text-[#A3AEC2] hover:text-white hover:bg-white/5'
+                        ? 'text-white bg-white/[0.08] shadow-sm font-semibold'
+                        : 'text-[#94A3B8] hover:text-white hover:bg-white/[0.04]'
                     }`}
                   >
                     {link.label}
                     {isActive && (
                       <span
                         aria-hidden="true"
-                        className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#3B82F6]"
+                        className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#3B82F6] shadow-[0_0_6px_#3B82F6]"
                       />
                     )}
                   </a>
@@ -184,21 +183,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
                 size="sm"
                 onClick={handleGetStarted}
                 rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
-                className="hidden sm:inline-flex shadow-electric-blue-sm"
+                className="hidden sm:inline-flex"
               >
                 Get Started
               </Button>
 
-              {/* Mobile Hamburger Button */}
+              {/* Mobile Hamburger Button with 44px touch area */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2.5 rounded-xl bg-[#101A2D] text-[#A3AEC2] hover:text-white border border-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-[#3B82F6] cursor-pointer"
+                className="md:hidden w-11 h-11 flex items-center justify-center rounded-xl bg-[#101A2D] text-[#94A3B8] hover:text-white border border-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-[#3B82F6] cursor-pointer"
                 aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-navigation"
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
@@ -216,7 +215,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
         >
           {/* Backdrop overlay */}
           <div
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md"
             onClick={() => setMobileMenuOpen(false)}
           />
 
@@ -230,15 +229,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
                     key={link.id}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href, link.id)}
-                    className={`px-4 py-3 rounded-xl text-base font-medium transition-colors flex items-center justify-between ${
+                    className={`min-h-[48px] px-4 py-3 rounded-xl text-base font-medium transition-colors flex items-center justify-between ${
                       isActive
                         ? 'text-white bg-[#101A2D] border border-blue-500/30 font-semibold'
-                        : 'text-[#A3AEC2] hover:text-white hover:bg-[#101A2D]/50'
+                        : 'text-[#94A3B8] hover:text-white hover:bg-[#101A2D]/50'
                     }`}
                   >
                     <span>{link.label}</span>
                     {isActive && (
-                      <span className="w-2 h-2 rounded-full bg-[#3B82F6]" />
+                      <span className="w-2 h-2 rounded-full bg-[#3B82F6] shadow-[0_0_8px_#3B82F6]" />
                     )}
                   </a>
                 );
@@ -250,7 +249,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
                 variant="primary"
                 size="md"
                 onClick={handleGetStarted}
-                className="w-full justify-center shadow-electric-blue"
+                className="w-full justify-center"
                 rightIcon={<ArrowRight className="w-4 h-4" />}
               >
                 Get Started
